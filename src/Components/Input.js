@@ -16,8 +16,8 @@ const Input = ({ label, type, name, id, placeholder, register, errors }) => {
           id={id}
           className={`rounded py-1 px-3 block w-full border ${
             errors[name]
-              ? "bg-red-50 border border-red-400 rounded py-1 px-3 block focus:ring-red-500 focus:border-red-500 text-gray-700 outline-red-400"
-              : "bg-gray-50 placeholder-shown:border-gray-500 border-gray-400  focus:ring-gray-500 focus:border-gray-500 text-gray-700 outline-green-400"
+              ? "bg-red-50 border border-red-400 rounded py-1 px-3 block focus:ring-red-500 focus:border-red-500 text-gray-700 outline-none"
+              : "bg-gray-50 border-gray-400  focus:ring-gray-500 focus:border-gray-500 text-gray-700 outline-green-400"
           }`}
           placeholder={placeholder}
           {...register(name)}

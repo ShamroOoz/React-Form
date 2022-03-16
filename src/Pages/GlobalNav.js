@@ -18,9 +18,12 @@ const GlobalNav = () => {
         <NavLink to="/" className={isActive}>
           Home
         </NavLink>
+        <NavLink to="normal-form" className={isActive}>
+          Basic Form
+        </NavLink>
 
-        <NavLink to="basic-form" className={isActive}>
-          Basic
+        <NavLink to="use-form-Hook" className={isActive}>
+          UseForm Hook
         </NavLink>
       </div>
     </nav>

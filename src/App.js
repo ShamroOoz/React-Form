@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "Pages/Layout";
-import BasicForm from "Pages/BasicForm";
+import UseFormHook from "Pages/UseFormHook";
+import NormalForm from "Pages/NormalForm";
 import Home from "./Pages/Home";
 
 const App = () => {
@@ -9,7 +10,8 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="basic-form" element={<BasicForm />} />
+        <Route path="use-form-Hook" element={<UseFormHook />} />
+        <Route path="normal-form" element={<NormalForm />} />
       </Route>
     </Routes>
   );

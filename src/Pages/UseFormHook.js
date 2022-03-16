@@ -28,7 +28,7 @@ const options = [
   { value: "vanilla", label: "Vanilla" },
 ];
 
-const BasicForm = () => {
+const UseFormHook = () => {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const {
@@ -77,8 +77,7 @@ const BasicForm = () => {
       <div className="p-8 rounded border border-gray-200">
         <h1 className="font-medium text-3xl">Add User</h1>
         <p className="text-gray-600 mt-6">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
-          dolorem vel cupiditate laudantium dicta.
+          This form is implemented by use-form-Hook
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -174,4 +173,4 @@ const BasicForm = () => {
   );
 };
 
-export default BasicForm;
+export default UseFormHook;
