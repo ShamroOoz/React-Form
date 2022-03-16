@@ -1,14 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "Pages/Layout";
+import BasicForm from "Pages/BasicForm";
+import Home from "./Pages/Home";
+
 const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Layout />} />
-      </Routes>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>;
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="basic-form" element={<BasicForm />} />
+      </Route>
+    </Routes>
   );
 };
 
