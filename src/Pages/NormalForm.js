@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  LockClosedIcon,
-  LockOpenIcon,
-  MailIcon,
-  UserIcon,
-} from "@heroicons/react/solid";
+
 import useNormalForm from "Hooks/UseNormalForm";
 import validateInfo from "Utils/validateInfo";
 import NormalInput from "Components/NormalInput";
@@ -21,10 +16,11 @@ const NormalForm = () => {
       type: "text",
       placeholder: "Username",
       label: "Username",
-      // errorMessage:
-      //   "Username should be 3-16 characters and shouldn't include any special character!",
-      // pattern: "^[A-Za-z0-9]{3,16}$",
-      // required: true,
+      avatar: "UserIcon",
+      errorMessage:
+        "Username should be 3-16 characters and shouldn't include any special character!",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
     },
     {
       id: 2,
@@ -32,32 +28,35 @@ const NormalForm = () => {
       type: "email",
       title: "email",
       placeholder: "Email",
-      // errorMessage: "It should be a valid email address!",
-      // label: "Email",
-      // required: true,
+      avatar: "MailIcon",
+      errorMessage: "It should be a valid email address!",
+      label: "Email",
+      required: true,
     },
     {
       id: 4,
       name: "password",
       type: "password",
       title: "password",
+      avatar: "LockOpenIcon",
       placeholder: "Password",
-      //  errorMessage:
-      //    "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
-      //  label: "Password",
-      //  pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
-      //  required: true,
+      errorMessage:
+        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
+      label: "Password",
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      required: true,
     },
     {
       id: 5,
       name: "password2",
       type: "password",
       title: "confirm Password",
+      avatar: "LockClosedIcon",
       placeholder: "Confirm Password",
-      // errorMessage: "Passwords don't match!",
-      // label: "Confirm Password",
-      // pattern: values.password,
-      // required: true,
+      errorMessage: "Passwords don't match!",
+      label: "Confirm Password",
+      pattern: values.password,
+      required: true,
     },
   ];
 
@@ -77,6 +76,7 @@ const NormalForm = () => {
               {...input}
               value={values[input.name] || ""}
               errors={errors[input.name]}
+              errorMessage={[input.errorMessage]}
               onChange={handleChange}
             />
           ))}

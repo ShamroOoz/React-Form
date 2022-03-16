@@ -1,21 +1,34 @@
-import React from "react";
-import { UserIcon } from "@heroicons/react/solid";
+import React, { useState } from "react";
+import { HeroIcon } from "Utils/HeroIcon";
 
-const NormalInput = ({ errors, ...inputprop }) => {
+const NormalInput = ({ errors, errorMessage, avatar, ...inputprop }) => {
+  const [focused, setFocused] = useState(false);
+
+  const handleFocus = (e) => {
+    setFocused(true);
+  };
   return (
-    <div>
+    <>
       <div className="relative mt-4">
         <input
           className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
           {...inputprop}
+          onBlur={handleFocus}
+          onFocus={() => inputprop.name === "password2" && setFocused(true)}
+          focused={focused.toString()}
         />
 
         <div className="absolute left-0 inset-y-0 flex items-center">
-          <UserIcon className="h-7 w-7 ml-3 text-gray-400 p-1" />
+          <HeroIcon
+            icon={avatar}
+            color="h-7 w-7 ml-3 text-gray-400 p-1"
+            solid
+          />
         </div>
       </div>
       <div>{errors && <p className="text-red-500">{errors}</p>}</div>
-    </div>
+      <div>{errorMessage && <p className="errormsg ">{errorMessage}</p>}</div>
+    </>
   );
 };
 

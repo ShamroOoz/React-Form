@@ -23,7 +23,7 @@ const Input = ({ label, type, name, id, placeholder, register, errors }) => {
           {...register(name)}
         />
         {errors[name] && (
-          <div className="flex items-center mt-1 text-red-700">
+          <div className=" flex items-center mt-1 text-red-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
