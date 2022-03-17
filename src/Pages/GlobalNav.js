@@ -25,6 +25,9 @@ const GlobalNav = () => {
         <NavLink to="use-form-Hook" className={isActive}>
           UseForm Hook
         </NavLink>
+        <NavLink to="formik-form" className={isActive}>
+          Formik
+        </NavLink>
       </div>
     </nav>
   );
