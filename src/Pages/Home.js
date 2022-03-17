@@ -1,3 +1,4 @@
+import React from "react";
 import FormInput from "Components/FormInput";
 import { Link } from "react-router-dom";
 import SelfFormHook from "Hooks/SelfFormHook";
@@ -17,6 +18,7 @@ const Home = () => {
         "Username should be 3-16 characters and shouldn't include any special character!",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
+      autoFocus: true,
     },
     {
       id: 2,

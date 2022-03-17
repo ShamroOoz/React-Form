@@ -19,7 +19,8 @@ const SelfFormHook = () => {
 
     setTimeout(() => {
       setSubmitting(false);
-      console.log(values);
+      console.log("values", values);
+      // setValues(null); todo => find the sol to make it reset
     }, 3000);
   };
   const onChange = (e) => {

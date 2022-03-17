@@ -30,7 +30,7 @@ const useNormalForm = (validate) => {
     setTimeout(() => {
       console.log("Herr", values);
       setIsSubmitting(false);
-      setValues(initialState);
+      setValues({});
     }, 3000);
   };
 
